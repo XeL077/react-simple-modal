@@ -1,0 +1,42 @@
+{
+  "name": "react-simple-modal",
+  "version": "0.0.1",
+  "description": "Simple react modal component",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc -p . && yarn copy-types",
+    "clean": "rm -rf dist/",
+    "copy-types": "cp src/index.d.ts dist/index.d.ts",
+    "watch": "tsc-watch -p . --onSuccess 'yarn copy-types'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "simple",
+    "pop",
+    "popout"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0-0",
+    "react-dom": "^18.0.0-0"
+  },
+  "devDependencies": {
+    "react": "^18.0.0-0",
+    "react-dom": "^18.0.0-0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "4.3.5"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "author": "XeL077",
+  "license": "MIT"
+}

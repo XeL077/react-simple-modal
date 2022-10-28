@@ -1,0 +1,16 @@
+# IntelliJ
+#
+build/
+dist/
+.idea
+
+# VS Code
+.vscode/*
+
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
