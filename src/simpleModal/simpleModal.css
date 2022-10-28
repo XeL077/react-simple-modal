@@ -1,0 +1,110 @@
+:root {
+  --animationSetting: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*
+  disabled body
+*/
+.modal-is-open {
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: auto;
+  text-align: center;
+  z-index: 100;
+}
+
+.modal-frame::before {
+    content: '';
+    display: inline-block;
+    height: 100vh;
+    width: 0;
+    vertical-align: middle;
+}
+
+.modal-frame.modal-hide {
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+}
+
+.modal-pin-to-target .modal {
+  vertical-align: top;
+  animation: slide-from-bottom var(--animationSetting);
+}
+
+.modal-pin-to-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.modal-exclude-overlay {
+  height: auto;
+}
+
+.modal-pin-to-top.modal-exclude-overlay::before {
+  content: none;
+}
+
+.modal-pin-to-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal {
+  animation: slide-from-bottom var(--animationSetting);
+  flex: 1 1 0;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.modal-exclude-overlay {
+  top: auto;
+  bottom: 0;
+  height: auto;
+}
+
+.modal-exclude-overlay::before {
+  content: none;
+}
+
+.modal-pin-to-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal-pin-to-left.modal-exclude-overlay {
+    width: auto;
+}
+
+.modal {
+   animation: slide-from-left var(--animationSetting);
+}
+
+.modal-pin-to-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal-pin-to-right.modal-exclude-overlay {
+    width: auto;
+  }
+
+.modal {
+    animation: slide-from-right var(--animationSetting);
+}
+
+.modal-default-mode.modal-frame {
+  animation: show-overlay var(--animationSetting);
+}
