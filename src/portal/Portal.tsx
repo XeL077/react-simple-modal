@@ -8,7 +8,7 @@ interface PortalProps {
   children: React.ReactNode;
 
   /**
-   * Место для вставки
+   * Место для монтирования
    * */
   renderPlace?: HTMLElement | null;
 }
